@@ -1,7 +1,7 @@
 <div>
     <x-preline.table.data-table>
         <x-slot name="headerColumns">
-            <x-preline.table.header-column label="Entregador" />
+            <x-preline.table.header-column label="Nome" />
             <x-preline.table.header-column label="Data de solicitação" />
             <x-preline.table.header-column label="Data de referencia" />
             <x-preline.table.header-column label="Taxa" />

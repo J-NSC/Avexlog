@@ -1,8 +1,8 @@
 @props(['id'])
 
-<div id="{{ $id }}" wire:ignore.self class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none">
-    <div class="hs-overlay-open:mt-0 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-10 opacity-0 transition-all max-w-full max-h-full h-full sm:hs-overlay-open:mt-10 sm:mt-0 sm:max-w-lg sm:max-h-none sm:h-auto sm:mx-auto">
-        <div class="flex flex-col bg-white pointer-events-auto max-w-full max-h-full h-full sm:max-w-lg sm:max-h-none sm:h-auto sm:border sm:rounded-xl sm:shadow-sm dark:bg-neutral-800 sm:dark:border-neutral-700">
+<div id="{{ $id }}" wire:ignore.self class="hs-overlay hidden fixed inset-0 z-[80] flex items-center justify-center pointer-events-none">
+    <div class="hs-overlay-open:mt-0 hs-overlay-open:opacity-100 hs-overlay-open:duration-500 opacity-0 transition-all max-w-full max-h-full h-auto sm:max-w-lg sm:max-h-none sm:mx-auto">
+        <div class="flex flex-col bg-white pointer-events-auto max-w-full max-h-full h-auto sm:max-w-lg sm:max-h-none sm:border sm:rounded-xl sm:shadow-sm dark:bg-neutral-800 sm:dark:border-neutral-700">
             <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
                 <h3 class="font-bold text-gray-800 dark:text-white">
                     {{ $title }}

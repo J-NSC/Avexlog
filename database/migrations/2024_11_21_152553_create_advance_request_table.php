@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('advance_requests', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Drivers::class)->constrained();
+            $table->foreignIdFor(\App\Models\Driver::class)->constrained();
+            $table->foreignIdFor(\App\Models\TermService::class)->constrained();
             $table->date('request_date');
             $table->date('reference_date');
             $table->double('rate');
