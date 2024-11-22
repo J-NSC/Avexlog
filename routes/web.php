@@ -24,6 +24,11 @@ Route::middleware(['auth'])->group(function () {
         Route::view('advance' , 'Advance.index')->name('index');
     });
 
+
+    Route::prefix('Agendamento')->name('scheduler.')->group(function () {
+        Route::view('scheduler' , 'Scheduler.index')->name('index');
+    });
+
 });
 Route::view('users', 'users')
     ->middleware(['auth', 'verified'])

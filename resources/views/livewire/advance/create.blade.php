@@ -18,17 +18,25 @@
                     cadastrada no sistema.
                 </p>
                 <p class="mt-4 font-semibold">
-                    Valor Disponível para Adiantamento: <strong>R$ 221,50</strong>
+                    Valor Disponível para Adiantamento: <strong>R$ --valor--</strong>
                 </p>
 
                 <label for="agreement" class="flex items-center mt-4">
                     <input type="checkbox" id="agreement" class="mr-2" wire:model="agreement">
                     Li, aceito e concordo com os termos do serviço prestado.
                 </label>
+
+                @error('agreement')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
             </div>
         </div>
 
-        <x-preline.input id="" x-mask:dynamic="$money($input)" label="Insira o valor" wire:model='amount' placeholder="Ex: R$ 321,1" />
+        <x-preline.input id="amount"
+                         x-mask:dynamic="$money($input, ',')"
+                         label="Insira o valor"
+                         wire:model='amount'
+                         placeholder="Ex: R$ 321,1" />
 
     </x-slot>
 

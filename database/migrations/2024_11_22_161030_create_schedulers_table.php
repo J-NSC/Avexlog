@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pix', function (Blueprint $table) {
+        Schema::create('schedulers', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
-            $table->string('pix_key');
+            $table->date('date');
+            $table->string('status');
+            $table->string('justification')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pix');
+        Schema::dropIfExists('schedulers');
     }
 };

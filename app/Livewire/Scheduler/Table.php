@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Livewire\Advance;
+namespace App\Livewire\Scheduler;
 
 use App\Models\Advance\AdvanceRequest;
+use App\Models\Scheduler;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -13,8 +14,8 @@ class Table extends Component
     public function render()
     {
 
-        return view('livewire.advance.table', [
-            'advances' => AdvanceRequest::query()->paginate(10)
+        return view('livewire.scheduler.table', [
+            'schedules' => Scheduler::query()->paginate(10)
         ]);
     }
 }

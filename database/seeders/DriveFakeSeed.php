@@ -13,6 +13,6 @@ class DriveFakeSeed extends Seeder
      */
     public function run(): void
     {
-        Driver::firstOrCreate(['user_id' => 1]);
+
     }
 }

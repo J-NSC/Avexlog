@@ -31,7 +31,9 @@ $logout = function (Logout $logout) {
             </div>
 
             <div class="hidden sm:block">
-
+                <div class="mr-2">
+                    <x-ui.toggle-color-theme />
+                </div>
             </div>
 
             <div class="flex flex-row items-center justify-end gap-2">

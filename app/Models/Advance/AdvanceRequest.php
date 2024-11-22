@@ -4,6 +4,7 @@ namespace App\Models\Advance;
 
 use App\Models\Driver;
 use App\Models\TermService;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,7 +16,7 @@ class AdvanceRequest extends Model
     use HasFactory;
 
     protected $fillable =[
-        'driver_id',
+        'user_id',
         'term_service_id',
         'request_date',
         'reference_date',
@@ -24,8 +25,13 @@ class AdvanceRequest extends Model
 
     ];
 
-    public function driver():BelongsTo{
-        return $this->belongsTo(Driver::class);
+    protected $casts = [
+        'request_date' => 'datetime',
+        'reference_date' => 'datetime',
+    ];
+
+    public function user():BelongsTo{
+        return $this->belongsTo(User::class);
     }
 
     public function TermService(): HasOne

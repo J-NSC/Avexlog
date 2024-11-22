@@ -32,7 +32,7 @@ class Create extends Component
         try {
             $termService = TermService::firstOrCreate(['agreed' => $this->agreement]);
             AdvanceRequest::create([
-                'driver_id' => Auth::id(),
+                'user_id' => Auth::id(),
                 'term_service_id' => $termService->id,
                 'request_date' => now(),
                 'reference_date' => now()->addDays(7),

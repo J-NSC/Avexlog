@@ -27,7 +27,7 @@
 <livewire:layout.sidebar />
 
 <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
-    <main class="flex-1 max-h-full p-5 overflow-hidden overflow-y-scroll bg-gray-100 dark:bg-neutral-800">
+    <main class="flex-1 max-h-full p-5 overflow-hidden bg-gray-100 dark:bg-neutral-800">
         <div
             class="flex flex-col items-start justify-between pb-4 space-y-4 border-b dark:border-b-neutral-700 lg:items-center lg:space-y-0 lg:flex-row">
             <div class="flex items-center">
@@ -62,5 +62,6 @@
 <livewire:components.notifications />
 
 <x-toaster-hub />
+
 </body>
 </html>
