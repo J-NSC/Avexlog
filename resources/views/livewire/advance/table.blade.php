@@ -10,7 +10,7 @@
         </x-slot>
         <x-slot name="dataRows">
             @foreach($advances as $advance)
-                <x-preline.table.data-column data="{{ $advance->drive->user->name}}" />
+                <x-preline.table.data-column data="{{ $advance->driver->user->name}}" />
                 <x-preline.table.data-column data="{{ $advance->request_date}}" />
                 <x-preline.table.data-column data="{{ $advance->reference_date}}" />
                 <x-preline.table.data-column data="{{ $advance->rate}}" />

@@ -29,19 +29,19 @@ class Create extends Component
         }
 
         DB::beginTransaction();
-
         try {
             $termService = TermService::firstOrCreate(['agreed' => $this->agreement]);
             AdvanceRequest::create([
-                'drivers_id' => Auth::id(),
+                'driver_id' => Auth::id(),
                 'term_service_id' => $termService->id,
                 'request_date' => now(),
                 'reference_date' => now()->addDays(7),
                 'rate' => 5.00,
                 'advance_amount' => $this->amount,
             ]);
+            DB::commit();
             session()->flash('alert-success' , 'Adiantamento solicitado com sucesso!');
-            return redirect()->route('neighborhood.index');
+            return redirect(request()->headers->get('referer'));
         }catch (Throwable $t){
             report($t);
             DB::rollBack();

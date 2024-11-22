@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('vehicle', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Drivers::class)->constrained();
+            $table->foreignIdFor(\App\Models\Driver::class)->constrained();
             $table->string('plate_number');
             $table->timestamps();
         });

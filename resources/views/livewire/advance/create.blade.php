@@ -28,7 +28,7 @@
             </div>
         </div>
 
-        <x-preline.input id="" label="Insira o valor" wire:model='amount' placeholder="Ex: Yure Samarone" />
+        <x-preline.input id="" x-mask:dynamic="$money($input)" label="Insira o valor" wire:model='amount' placeholder="Ex: R$ 321,1" />
 
     </x-slot>
 

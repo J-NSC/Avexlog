@@ -2159,22 +2159,22 @@
         },
         {
             "name": "masmerise/livewire-toaster",
-            "version": "2.1.0",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/masmerise/livewire-toaster.git",
-                "reference": "35104bbb930d2638335e3685a307fb0ec348f5e5"
+                "reference": "89aa127df5d17b915b0818761bdf83e8915036c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/masmerise/livewire-toaster/zipball/35104bbb930d2638335e3685a307fb0ec348f5e5",
-                "reference": "35104bbb930d2638335e3685a307fb0ec348f5e5",
+                "url": "https://api.github.com/repos/masmerise/livewire-toaster/zipball/89aa127df5d17b915b0818761bdf83e8915036c2",
+                "reference": "89aa127df5d17b915b0818761bdf83e8915036c2",
                 "shasum": ""
             },
             "require": {
                 "laravel/framework": "^10.0",
                 "livewire/livewire": "^3.0",
-                "php": "~8.3"
+                "php": "~8.2"
             },
             "conflict": {
                 "stevebauman/unfinalize": "*"
@@ -2224,9 +2224,9 @@
             ],
             "support": {
                 "issues": "https://github.com/masmerise/livewire-toaster/issues",
-                "source": "https://github.com/masmerise/livewire-toaster/tree/2.1.0"
+                "source": "https://github.com/masmerise/livewire-toaster/tree/2.0.3"
             },
-            "time": "2023-12-13T12:33:45+00:00"
+            "time": "2023-09-28T12:07:49+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6175,16 +6175,16 @@
         },
         {
             "name": "fakerphp/faker",
-            "version": "v1.24.0",
+            "version": "v1.24.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FakerPHP/Faker.git",
-                "reference": "a136842a532bac9ecd8a1c723852b09915d7db50"
+                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/a136842a532bac9ecd8a1c723852b09915d7db50",
-                "reference": "a136842a532bac9ecd8a1c723852b09915d7db50",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
+                "reference": "e0ee18eb1e6dc3cda3ce9fd97e5a0689a88a64b5",
                 "shasum": ""
             },
             "require": {
@@ -6232,9 +6232,9 @@
             ],
             "support": {
                 "issues": "https://github.com/FakerPHP/Faker/issues",
-                "source": "https://github.com/FakerPHP/Faker/tree/v1.24.0"
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.24.1"
             },
-            "time": "2024-11-07T15:11:20+00:00"
+            "time": "2024-11-21T13:46:39+00:00"
         },
         {
             "name": "fidry/cpu-core-counter",

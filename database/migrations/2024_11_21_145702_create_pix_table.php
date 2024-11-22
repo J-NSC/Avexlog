@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('pix', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Drivers::class)->constrained();
+            $table->foreignIdFor(\App\Models\Driver::class)->constrained();
             $table->string('pix_key');
             $table->timestamps();
         });
