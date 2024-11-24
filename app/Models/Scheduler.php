@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enum\SchedulerRoster;
 use App\Enum\SchedulerStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -14,11 +15,13 @@ class Scheduler extends Model
     protected $fillable = [
         'date',
         'status',
+        'turn',
         'justification',
     ];
 
     protected $casts = [
         'date' => 'datetime',
+        'turn' => SchedulerRoster::class,
         'status' => SchedulerStatus::class
 
     ];

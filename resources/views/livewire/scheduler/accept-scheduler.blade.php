@@ -4,23 +4,7 @@
     </x-slot>
 
     <x-slot name="content">
-        <x-preline.input
-            id="day"
-            label="Dia desejado"
-            type="date"
-            wire:model="date"
-            min="{{ $startOfWeek }}"
-            max="{{ $endOfNextWeek }}"
-        />
-
-        <x-preline.select id="" label="Selecione um turno" wire:model="turn">
-            <option value=""> Selecione</option>
-            @foreach(\App\Enum\SchedulerRoster::cases() as $roster)
-                <option value="{{$roster->value}}">
-                    {{$roster->display()}} - {{$roster->timeRange()}}
-                </option>
-            @endforeach
-        </x-preline.select>
+        <x-preline.input id="day" label="Dia desejado" type="date" wire:model="date"/>
     </x-slot>
 
     <x-slot name="footer">

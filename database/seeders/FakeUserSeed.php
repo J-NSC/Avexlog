@@ -21,5 +21,22 @@ class FakeUserSeed extends Seeder
             'cpf' => '04321958441',
             'phone' => '93992198198'
         ])->assignRole('super_admin');
+
+        User::factory()->create([
+            'name' => 'admin',
+            'email' => 'admin@user.com',
+            'password' => Hash::make('password@'),
+            'cpf' => '04321958221',
+            'phone' => '93992198192'
+        ])->assignRole('admin');
+
+
+        User::factory()->create([
+            'name' => 'Savio',
+            'email' => 'savio@user.com',
+            'password' => Hash::make('password@'),
+            'cpf' => '04321958442',
+            'phone' => '93992198128'
+        ])->assignRole('delivery_driver');
     }
 }

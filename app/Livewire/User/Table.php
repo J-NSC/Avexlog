@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Livewire\Advance;
+namespace App\Livewire\User;
 
 use App\Models\Advance\AdvanceRequest;
+use App\Models\User;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -12,8 +13,10 @@ class Table extends Component
 
     public function render()
     {
-        return view('livewire.advance.table', [
-            'advances' => AdvanceRequest::query()->paginate(10)
+
+
+        return view('livewire.user.table', [
+            'users' =>User::query()->paginate(10)
         ]);
     }
 }

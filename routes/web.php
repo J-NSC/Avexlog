@@ -29,6 +29,10 @@ Route::middleware(['auth'])->group(function () {
         Route::view('scheduler' , 'Scheduler.index')->name('index');
     });
 
+    Route::prefix('Usuarios')->name('users.')->group(function () {
+        Route::view('user' , 'User.index')->name('index');
+    });
+
 });
 Route::view('users', 'users')
     ->middleware(['auth', 'verified'])

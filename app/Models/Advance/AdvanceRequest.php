@@ -2,6 +2,7 @@
 
 namespace App\Models\Advance;
 
+use App\Enum\SchedulerRoster;
 use App\Models\Driver;
 use App\Models\TermService;
 use App\Models\User;
@@ -26,6 +27,7 @@ class AdvanceRequest extends Model
     ];
 
     protected $casts = [
+
         'request_date' => 'datetime',
         'reference_date' => 'datetime',
     ];

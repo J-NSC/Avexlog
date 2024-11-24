@@ -7,6 +7,7 @@
   "Accepted": "Aceito",
   "Action": "Ação",
   "Administrator": "Administrador",
+    "Advance": "Adiantamento",
   "Administrator users can perform any action.": "O administrador pode realizar qualquer ação.",
   "Accept Invitation": "Aceitar Convite",
   "Add a new team member to your team, allowing them to collaborate with you.": "Adicione um novo membro à sua equipe, permitindo que ele colabore com você.",
@@ -25,6 +26,7 @@
   "Browser Sessions": "Sessões do navegador",
   "click here to request another": "clique aqui para solicitar outro",
   "Cancel": "Cancelar",
+    "Cancelled": "Cancelado",
   "Click here to re-send the verification email.": "Clique aqui para reenviar o e-mail de verificação.",
   "Close": "Fechar",
   "Code": "Código",
@@ -109,6 +111,7 @@
   "Reset Password Notification": "Notificação de redefinição de senha",
   "results": "resultados",
   "Role": "Função",
+    "Roster": "Escala",
   "Save": "Salvar",
   "Saved.": "Salvou",
   "Schedule roster": "Agendar Escala",
@@ -150,6 +153,7 @@
   "Update Password": "Atualizar a senha",
   "Update your account profile information and email address.": "Atualize as informações do perfil e o endereço de e-mail da sua conta.",
   "Update your account's profile information and email address.": "Atualize as informações do perfil da sua conta e o endereço de e-mail.",
+"User": "Usuario",
   "Use a recovery code": "Use o código recuperado",
   "Use an authentication code": "Use um código de autenticação",
   "Verify Email Address": "Verificar E-mail",
@@ -164,5 +168,8 @@
   "You have not enabled two factor authentication.": "Você ainda não habilitou a autenticação de dois fatores.",
   "You may delete any of your existing tokens if they are no longer needed.": "Você deve deletar os tokens sem utilização.",
   "Your email address is unverified.": "Seu endereço de e-mail não foi verificado.",
-  "Photo": "Foto"
+  "Photo": "Foto",
+    "Breakfast": "Café da Manhã",
+    "Lunch": "Almoço",
+    "Dinner": "Janta"
 }

@@ -40,6 +40,8 @@ class PermissionsSeed extends Seeder
                 'create scheduler',
                 'view scheduler',
                 'edit scheduler',
+                'access scheduler',
+                'reject scheduler',
                 'delete scheduler',
             ],
             'justification' => [
@@ -49,16 +51,22 @@ class PermissionsSeed extends Seeder
                 'delete justification',
             ],
             'Advance' => [
-                'create Advance',
-                'view Advance',
-                'edit Advance',
-                'delete Advance',
+                'create advance',
+                'view advance',
+                'edit advance',
+                'delete advance',
             ]
         ];
 
         $rolePermissions = [
             'super_admin' => array_merge(...array_values($permissions)),
-            'admin' => array_diff(array_merge(...array_values($permissions)), ['delete user']),
+            'admin' => array_diff(array_merge(...array_values($permissions)), [
+                'delete user',
+                'create scheduler',
+                'edit scheduler',
+                'create advance',
+                'edit advance',
+            ]),
             'delivery_driver' => array_merge(
                 $permissions['scheduler'],
                 $permissions['Advance'],
@@ -72,8 +80,6 @@ class PermissionsSeed extends Seeder
                         'scope' => $scope,
                         'name' => $permission,
                     ]);
-                    echo "Permission created: $permission\n";
-
                 }
             }
 

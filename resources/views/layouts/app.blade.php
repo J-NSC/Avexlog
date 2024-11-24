@@ -23,7 +23,6 @@
 <livewire:layout.navigation />
 
 <x-responsive-page-header :page="$page" />
-
 <livewire:layout.sidebar />
 
 <div class="w-full pt-10 px-4 sm:px-6 md:px-8 lg:pl-72">
@@ -62,6 +61,6 @@
 <livewire:components.notifications />
 
 <x-toaster-hub />
-
+<script src="../scripts/js/open-modals-on-init.js"></script>
 </body>
 </html>
