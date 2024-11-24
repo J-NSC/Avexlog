@@ -13,8 +13,7 @@ class Table extends Component
     public function render()
     {
         return view('livewire.advance.table', [
-            'advances' =>  AdvanceRequest::query()
-                ->paginate(10)
+            'advances' => AdvanceRequest::query()->paginate(10)
         ]);
     }
 }

@@ -1,73 +1,54 @@
 <?php
 
 use App\Livewire\Forms\LoginForm;
-use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Session;
+use Livewire\Attributes\Layout;
+use Livewire\Volt\Component;
 
-use function Livewire\Volt\form;
-use function Livewire\Volt\layout;
+new #[Layout('layouts.guest')] class extends Component
+{
+    public LoginForm $form;
 
-layout('layouts.guest');
+    public function login(): void
+    {
+        $this->validate();
 
-form(LoginForm::class);
+        $this->form->authenticate();
 
-$login = function () {
-    $this->validate();
+        Session::regenerate();
 
-    $this->form->authenticate();
+        $this->redirectIntended(default: route('dashboard', absolute: false), navigate: true);
+    }
+}; ?>
 
-    Session::regenerate();
-
-    $this->redirect(
-        session('url.intended', RouteServiceProvider::HOME),
-        navigate: true
-    );
-};
-
-?>
-
-<div>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form wire:submit="login">
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input wire:model="form.email" id="email" class="block mt-1 w-full" type="email" name="email" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
+<div class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('images/tela-fundo.png');">
+    <div class="bg-white bg-opacity-90 rounded-md shadow-lg p-6 max-w-md w-full">
+        <div class="text-center">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="mx-auto w-24 mb-4">
+            <h2 class="text-xl font-semibold text-gray-800">Login</h2>
         </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
+        <form wire:submit="login" class="mt-6">
 
-            <x-text-input wire:model="form.password" id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+            <div class="mt-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">Login:</label>
+                <input wire:model="form.email" id="email" name="email" type="text" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm">
+            </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember" class="inline-flex items-center">
-                <input wire:model="form.remember" id="remember" type="checkbox" class="rounded dark:bg-gray-900 border-gray-300 dark:border-gray-700 text-indigo-600 shadow-sm focus:ring-indigo-500 dark:focus:ring-indigo-600 dark:focus:ring-offset-gray-800" name="remember">
-                <span class="ml-2 text-sm text-gray-600 dark:text-gray-400">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+            <div class="mt-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Senha:</label>
+                <input wire:model="form.password" id="password" name="password" type="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary-500 focus:border-primary-500 sm:text-sm">
+            </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}" wire:navigate>
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
+            <div class="mt-6">
+                <button type="submit" class="w-full px-4 py-2 text-white bg-green-500 hover:bg-green-600 rounded-md shadow">
+                    Login
+                </button>
+            </div>
+        </form>
+    </div>
 </div>
+
+
+

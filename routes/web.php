@@ -13,8 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'welcome');
-
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -24,6 +22,15 @@ Route::middleware(['auth'])->group(function () {
 
     Route::prefix('Adiantamento')->name('advance.')->group(function () {
         Route::view('advance' , 'Advance.index')->name('index');
+    });
+
+
+    Route::prefix('Agendamento')->name('scheduler.')->group(function () {
+        Route::view('scheduler' , 'Scheduler.index')->name('index');
+    });
+
+    Route::prefix('Usuarios')->name('users.')->group(function () {
+        Route::view('user' , 'User.index')->name('index');
     });
 
 });

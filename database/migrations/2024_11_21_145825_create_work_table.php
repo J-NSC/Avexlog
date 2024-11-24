@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('work', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Drivers::class)->constrained();
+            $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->integer('day_worked');
             $table->string('financial_records');
             $table->integer('delivery');
