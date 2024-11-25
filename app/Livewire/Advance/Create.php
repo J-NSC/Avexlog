@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Advance;
 
+use App\Enum\AdvanceRequestStatus;
 use App\Models\Advance\AdvanceRequest;
 use App\Models\TermService;
 use Illuminate\Support\Facades\Auth;
@@ -20,13 +21,30 @@ class Create extends Component
     #[Validate('required', as: 'Valor')]
     public $amount;
 
-    public function save(){
+    public function save()
+    {
         $this->validate();
 
         if (!$this->agreement) {
             session()->flash('alert-danger', 'Você deve aceitar os termos de serviço.');
             return;
         }
+
+        if (!Auth::user()->pixs()->exists()) {
+            session()->flash('alert-danger', 'Cadastre um PIX para pode solicitar o adiantamento.');
+            return redirect()->route('pix.index');
+        }
+
+        $alreadyRequested = AdvanceRequest::where('user_id', Auth::id())
+            ->whereDate('request_date', now()->toDateString())
+            ->exists();
+
+        if ($alreadyRequested) {
+            session()->flash('alert-danger', 'Você só pode solicitar um adiantamento por dia.');
+            return redirect(request()->headers->get('referer'));
+        }
+
+
 
         DB::beginTransaction();
         try {
@@ -38,17 +56,19 @@ class Create extends Component
                 'reference_date' => now()->addDays(7),
                 'rate' => 5.00,
                 'advance_amount' => $this->amount,
+                'status' => AdvanceRequestStatus::REQUESTED
             ]);
             DB::commit();
-            session()->flash('alert-success' , 'Adiantamento solicitado com sucesso!');
+            session()->flash('alert-success', 'Adiantamento solicitado com sucesso!');
             return redirect(request()->headers->get('referer'));
-        }catch (Throwable $t){
+        } catch (Throwable $t) {
             report($t);
             DB::rollBack();
             session()->flash('alert-danger', $t->getMessage());
             return redirect(request()->headers->get('referer'));
         }
     }
+
 
     public function render()
     {

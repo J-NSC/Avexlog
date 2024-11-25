@@ -6,6 +6,7 @@
   "A new verification link has been sent to the email address you provided during registration.": "Um novo link de verificação foi enviado para o endereço de e-mail que você forneceu durante o registro.",
   "Accepted": "Aceito",
   "Action": "Ação",
+    "Assessment": "Avaliando",
   "Administrator": "Administrador",
     "Advance": "Adiantamento",
   "Administrator users can perform any action.": "O administrador pode realizar qualquer ação.",
@@ -171,5 +172,9 @@
   "Photo": "Foto",
     "Breakfast": "Café da Manhã",
     "Lunch": "Almoço",
-    "Dinner": "Janta"
+    "Dinner": "Janta",
+    "Paid": "Pago",
+    "Requested": "Solicitado",
+    "Pix": "Pix",
+    "Delivery": "Entregas"
 }

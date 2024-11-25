@@ -5,6 +5,7 @@ namespace App\Models;
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
@@ -48,4 +49,16 @@ class User extends Authenticatable
     public function scheduler(): BelongsToMany{
         return $this->belongsToMany(Scheduler::class , 'user_schedulers', 'user_id', 'scheduler_id');
     }
+
+    public function pixs():hasMany
+    {
+        return $this->hasMany(Pix::class);
+    }
+
+    public function work(): HasMany
+    {
+        return $this->hasMany(Work::class);
+    }
+
+
 }

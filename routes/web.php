@@ -33,6 +33,13 @@ Route::middleware(['auth'])->group(function () {
         Route::view('user' , 'User.index')->name('index');
     });
 
+    Route::prefix('Pix')->name('pix.')->group(function () {
+        Route::view('pix' , 'Pix.index')->name('index');
+    });
+
+    Route::prefix('Trabalhos')->name('work.')->group(function () {
+        Route::view('work' , 'Work.index')->name('index');
+    });
 });
 Route::view('users', 'users')
     ->middleware(['auth', 'verified'])

@@ -3,6 +3,7 @@
 namespace App\Livewire\Advance;
 
 use App\Models\Advance\AdvanceRequest;
+use App\Models\Pix;
 use Livewire\Component;
 use Livewire\WithPagination;
 

@@ -56,7 +56,7 @@ class Create extends Component
         try {
             $scheduler = Scheduler::create([
                 'date' => $this->date,
-                'status' => SchedulerStatus::SENDED,
+                'status' => SchedulerStatus::ASSESSMENT,
                 'turn' => $this->turn,
                 'justification' => $this->justification,
             ]);
