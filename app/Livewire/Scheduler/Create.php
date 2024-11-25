@@ -33,9 +33,9 @@ class Create extends Component
         $startOfWeek = Carbon::now()->startOfWeek();
         $startDate = Carbon::now()->greaterThan($startOfWeek) ? Carbon::now() : $startOfWeek;
         $endOfNextWeek = Carbon::now()->endOfWeek()->addWeek();
-
         $selectedDate = Carbon::parse($this->date);
-        if ($selectedDate->between($startDate, $endOfNextWeek)) {
+
+        if (!$selectedDate->between($startDate, $endOfNextWeek)) {
             session()->flash('alert-danger', 'A data deve estar entre hoje e o fim da próxima semana.');
             return redirect(request()->headers->get('referer'));
         }
