@@ -55,6 +55,12 @@ class PermissionsSeed extends Seeder
                 'view advance',
                 'edit advance',
                 'delete advance',
+            ],
+            'Pix' => [
+                'create pix',
+                'view pix',
+                'edit pix',
+                'delete pix',
             ]
         ];
 
@@ -66,6 +72,9 @@ class PermissionsSeed extends Seeder
                 'edit scheduler',
                 'create advance',
                 'edit advance',
+                'create pix',
+                'edit pix',
+                'delete pix',
             ]),
             'delivery_driver' => array_merge(
                 $permissions['scheduler'],

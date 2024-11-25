@@ -22,13 +22,14 @@
                 </p>
 
                 <label for="agreement" class="flex items-center mt-4">
-                    <input type="checkbox" id="agreement" class="mr-2" wire:model="agreement">
+                    <input type="checkbox" id="agreement" class="mr-2" wire:model.live="agreement">
                     Li, aceito e concordo com os termos do serviço prestado.
                 </label>
 
                 @error('agreement')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
+
             </div>
         </div>
 
@@ -37,6 +38,8 @@
                          label="Insira o valor"
                          wire:model='amount'
                          placeholder="Ex: R$ 321,1" />
+
+
 
     </x-slot>
 

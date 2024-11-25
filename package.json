@@ -15,6 +15,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@preline/input-number": "^2.5.0",
         "@preline/overlay": "^2.5.0",
         "bootstrap-icons": "^1.11.1",
         "preline": "^1.9.0"

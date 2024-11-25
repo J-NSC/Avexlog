@@ -2,6 +2,7 @@
 
 namespace App\Models\Advance;
 
+use App\Enum\AdvanceRequestStatus;
 use App\Enum\SchedulerRoster;
 use App\Models\Driver;
 use App\Models\TermService;
@@ -23,11 +24,12 @@ class AdvanceRequest extends Model
         'reference_date',
         'rate',
         'advance_amount',
+        'status'
 
     ];
 
     protected $casts = [
-
+        'status' => AdvanceRequestStatus::class,
         'request_date' => 'datetime',
         'reference_date' => 'datetime',
     ];

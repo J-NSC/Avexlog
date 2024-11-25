@@ -18,6 +18,8 @@ class Table extends Component
     #[Url(history: false)]
     public $date;
 
+    #[Url(except: '')]
+    public $turn ;
 
     public function mount()
     {
@@ -75,6 +77,7 @@ class Table extends Component
         return view('livewire.scheduler.table', [
             'schedules' => Scheduler::query()
                 ->whereDate('date', $this->date)
+                ->when($this->turn , fn($q) => $q->where('turn' , $this->turn))
                 ->paginate(10),
         ]);
     }

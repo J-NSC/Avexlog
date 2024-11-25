@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Pix extends Model
+class Work extends Model
 {
     use HasFactory;
 
-
     protected $fillable = [
-      'pix_key',
-      'user_id',
+        'user_id',
+        'day_worked',
+        'financial_records',
+        'delivery',
+        'fees_sum'
     ];
 
 
-    public function user():belongsTo{
+    public function user():BelongsTo{
         return $this->belongsTo(User::class);
     }
 }

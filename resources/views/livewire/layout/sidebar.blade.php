@@ -23,30 +23,46 @@ use function Livewire\Volt\{state};
             <x-sidebar-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')" wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
             {{ request()->routeIs('dashboard') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
-                <x-icon.home class="w-5 h-5" />
+                <x-icon.home class="w-5 h-5"/>
                 {{ __('Home')}}
             </x-sidebar-link>
 
-            <x-sidebar-link href="{{ route('advance.index') }}" :active="request()->routeIs('advance.index')" wire:navigate
+            <x-sidebar-link href="{{ route('advance.index') }}" :active="request()->routeIs('advance.index')"
+                            wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
             {{ request()->routeIs('advance.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
-                <x-icon.money class="w-5 h-5" />
+                <x-icon.money class="w-5 h-5"/>
                 {{__('Advance')}}
             </x-sidebar-link>
 
-            <x-sidebar-link href="{{ route('scheduler.index') }}" :active="request()->routeIs('scheduler.index')" wire:navigate
+            <x-sidebar-link href="{{ route('scheduler.index') }}" :active="request()->routeIs('scheduler.index')"
+                            wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
             {{ request()->routeIs('scheduler.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
-                <x-icon.scheduler class="w-5 h-5" />
+                <x-icon.scheduler class="w-5 h-5"/>
                 {{__('Roster')}}
             </x-sidebar-link>
 
-            <x-sidebar-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')" wire:navigate
+            <x-sidebar-link href="{{ route('work.index') }}" :active="request()->routeIs('work.index')" wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
-            {{ request()->routeIs('users.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
-                <x-icon.scheduler class="w-5 h-5" />
-                {{__('User')}}
+            {{ request()->routeIs('work.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
+                <x-icon.delivery class="w-5 h-5"/>
+                {{__('Delivery')}}
             </x-sidebar-link>
+
+            <x-sidebar-link href="{{ route('pix.index') }}" :active="request()->routeIs('pix.index')" wire:navigate
+                            class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
+            {{ request()->routeIs('pix.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
+                <x-icon.pix class="w-5 h-5"/>
+                {{__('Pix')}}
+            </x-sidebar-link>
+
+            {{--            <x-sidebar-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')" wire:navigate--}}
+            {{--                            class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300--}}
+            {{--            {{ request()->routeIs('users.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">--}}
+            {{--                <x-icon.scheduler class="w-5 h-5" />--}}
+            {{--                {{__('User')}}--}}
+            {{--            </x-sidebar-link>--}}
 
         </ul>
     </nav>

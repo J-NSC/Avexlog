@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('reference_date');
             $table->double('rate');
             $table->string('advance_amount');
+            $table->string('status');
             $table->timestamps();
         });
     }

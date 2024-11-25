@@ -5,7 +5,7 @@ namespace App\Enum;
 enum SchedulerStatus: string
 {
     CASE ACCEPTED = 'accepted';
-    CASE SENDED = 'sended';
+    case ASSESSMENT = 'assessment';
     CASE REJECTED = 'rejected';
     CASE CANCELLED = 'cancelled';
 
@@ -13,7 +13,7 @@ enum SchedulerStatus: string
     {
         return match($this){
             self::ACCEPTED => __('Accepted'),
-            self::SENDED => __('Sended'),
+            self::ASSESSMENT => __('Assessment'),
             self::REJECTED => __('Rejected'),
             self::CANCELLED => __('Cancelled'),
         };
@@ -24,7 +24,7 @@ enum SchedulerStatus: string
     {
         return match($this){
             self::ACCEPTED => 'green',
-            self::SENDED => 'blue',
+            self::ASSESSMENT => 'blue',
             self::REJECTED => 'red',
             self::CANCELLED => 'amber',
         };
