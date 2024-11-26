@@ -11,14 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('works', function (Blueprint $table) {
+        Schema::create('settings', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
-            $table->integer('day_worked');
-            $table->string('financial_records');
-            $table->integer('delivery');
-            $table->integer('fees_sum');
-            $table->integer('price');
+            $table->string('key')->unique();
+            $table->decimal('value', 10, 2);
             $table->timestamps();
         });
     }
@@ -28,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('works');
+        Schema::dropIfExists('settings');
     }
 };

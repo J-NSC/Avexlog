@@ -61,7 +61,15 @@ class PermissionsSeed extends Seeder
                 'view pix',
                 'edit pix',
                 'delete pix',
+            ],
+            'Delivery' =>[
+                'create delivery',
+                'view delivery',
+                'edit delivery',
+                'delete delivery',
+                'create value'
             ]
+
         ];
 
         $rolePermissions = [

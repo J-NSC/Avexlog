@@ -1,9 +1,4 @@
 <div>
-    <div class="text-end text-gray-600 dark:text-gray-300">
-        <x-preline.input id="" label="Valor das entregas" wire:model="deliveryValue"/>
-    </div>
-
-
 
     <x-preline.table.data-table>
         <x-slot name="headerColumns">
