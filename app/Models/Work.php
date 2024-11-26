@@ -15,7 +15,8 @@ class Work extends Model
         'day_worked',
         'financial_records',
         'delivery',
-        'fees_sum'
+        'fees_sum',
+        'delivery_value'
     ];
 
 

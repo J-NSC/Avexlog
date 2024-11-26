@@ -27,6 +27,14 @@ use function Livewire\Volt\{state};
                 {{ __('Home')}}
             </x-sidebar-link>
 
+            @hasrole('admin|super_admin')
+            <x-sidebar-link href="{{ route('work.index') }}" :active="request()->routeIs('work.index')" wire:navigate
+                            class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
+            {{ request()->routeIs('work.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
+                <x-icon.delivery class="w-5 h-5"/>
+                {{__('Delivery')}}
+            </x-sidebar-link>
+            @endhasrole
             <x-sidebar-link href="{{ route('advance.index') }}" :active="request()->routeIs('advance.index')"
                             wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
@@ -43,12 +51,7 @@ use function Livewire\Volt\{state};
                 {{__('Roster')}}
             </x-sidebar-link>
 
-            <x-sidebar-link href="{{ route('work.index') }}" :active="request()->routeIs('work.index')" wire:navigate
-                            class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300
-            {{ request()->routeIs('work.index') ? 'text-black bg-white' : 'text-white hover:text-black hover:bg-gray-100' }}">
-                <x-icon.delivery class="w-5 h-5"/>
-                {{__('Delivery')}}
-            </x-sidebar-link>
+
 
             <x-sidebar-link href="{{ route('pix.index') }}" :active="request()->routeIs('pix.index')" wire:navigate
                             class="flex items-center gap-x-2 px-4 py-2 text-base font-semibold rounded-l-lg transition-colors duration-300

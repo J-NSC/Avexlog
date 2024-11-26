@@ -79,6 +79,7 @@ class PermissionsSeed extends Seeder
             'delivery_driver' => array_merge(
                 $permissions['scheduler'],
                 $permissions['Advance'],
+                $permissions['Pix']
             ),
         ];
         DB::beginTransaction();

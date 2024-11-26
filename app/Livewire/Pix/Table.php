@@ -7,6 +7,7 @@ use App\Models\Advance\AdvanceRequest;
 use App\Models\Pix;
 use App\Models\Scheduler;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -37,8 +38,16 @@ class Table extends Component
 
     public function render()
     {
+        $user = Auth::user();
+
+        $pixes = Pix::query();
+
+        if ($user && $user->hasRole('delivery_driver')) {
+            $pixes->where('user_id', $user->id);
+        }
+
         return view('livewire.pix.table', [
-            'pixes' => Pix::query()->paginate(10)
+            'pixes' => $pixes->paginate(10),
         ]);
     }
 }

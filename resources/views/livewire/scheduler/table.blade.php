@@ -2,14 +2,14 @@
 
     <div class="grid grid-cols-4 gap-2 p-4">
         <x-preline.input id="date" type="date" label="Filtre por data" wire:model.live='date'/>
-    <div>
-        <x-preline.select id="" wire:model.live="turn" label="Filtre pro Turno " placeholder="Selecione uma função">
-            <option value="">Selecione</option>
-            @foreach(\App\Enum\SchedulerRoster::cases() as $roster)
-                <option value="{{ $roster->value }}">{{$roster->display()}}</option>
-            @endforeach
-        </x-preline.select>
-    </div>
+        <div>
+            <x-preline.select id="" wire:model.live="turn" label="Filtre pro Turno " placeholder="Selecione uma função">
+                <option value="">Selecione</option>
+                @foreach(\App\Enum\SchedulerRoster::cases() as $roster)
+                    <option value="{{ $roster->value }}">{{$roster->display()}}</option>
+                @endforeach
+            </x-preline.select>
+        </div>
     </div>
 
     <div class="text-end text-gray-600 dark:text-gray-300">

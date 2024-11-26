@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Advance\AdvanceRequest;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -48,6 +49,11 @@ class User extends Authenticatable
 
     public function scheduler(): BelongsToMany{
         return $this->belongsToMany(Scheduler::class , 'user_schedulers', 'user_id', 'scheduler_id');
+    }
+
+    public function advanceRequests(): HasMany
+    {
+        return $this->hasMany(AdvanceRequest::class);
     }
 
     public function pixs():hasMany

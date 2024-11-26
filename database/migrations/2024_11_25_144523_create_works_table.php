@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('financial_records');
             $table->integer('delivery');
             $table->integer('fees_sum');
+            $table->integer('delivery_value');
             $table->timestamps();
         });
     }
